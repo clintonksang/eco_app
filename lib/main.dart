@@ -3,7 +3,6 @@ import 'package:eco_app/services/googlesignin/authmethods.dart';
 import 'package:eco_app/Views/LandingPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:eco_app/googlesignin/login.dart';
 import 'package:flutter/services.dart';
 
 void main() {
