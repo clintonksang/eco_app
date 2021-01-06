@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "712969938238",
+    "project_id": "aceacessories",
+    "storage_bucket": "aceacessories.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712969938238:android:2b5a5f2a0f35730e19f86f",
+        "android_client_info": {
+          "package_name": "com.ecoapp.eco_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712969938238-m17pvauauqek9pmot28s7phvpohrara4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ecoapp.eco_app",
+            "certificate_hash": "da621642b3fb35c1466f0086897b31310ccca3e3"
+          }
+        },
+        {
+          "client_id": "712969938238-k492t79u0r1j90ucqqb7uej3vsmobvvh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfBAcUGgfIqSy1cPJqul0VeRV5KXqbSEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712969938238-k492t79u0r1j90ucqqb7uej3vsmobvvh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
