@@ -15,7 +15,7 @@ class LoginScreenState extends State<LoginScreen> {
   bool isLoading = false;
 
   AuthMethods _repository = AuthMethods();
-  void _onLoading() {
+ _onLoading() {
     setState(() {
       isLoading = true;
       new Future.delayed(
