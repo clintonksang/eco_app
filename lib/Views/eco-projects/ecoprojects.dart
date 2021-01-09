@@ -1,5 +1,6 @@
 import 'package:eco_app/Views/eco-projects/dropdown.dart';
-import 'package:eco_app/Views/eco-projects/ecotracker.dart';
+import 'package:eco_app/Views/eco-projects/maintenance.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -171,69 +172,158 @@ class _EcoProjectsState extends State<EcoProjects> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          elevation: 0,
-          leading: IconButton(
-            color: Colors.black,
-            icon: Icon(Icons.arrow_back_ios),
-            onPressed: () => Navigator.pop(context),
-          ),
-          backgroundColor: Colors.white,
-          title: Text(
-            "Eco Projects",
-            style: GoogleFonts.montserrat(
-              fontSize: 25,
-              color: Colors.black,
-              fontWeight: FontWeight.w300,
-            ),
-          ),
-          centerTitle: true,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        leading: IconButton(
+          color: Colors.black,
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.pop(context),
         ),
-        body: !hascreatednursery
-            ? GestureDetector(
-                onTap: () => _modalBottomSheetMenu(),
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 80.0),
-                    child: Container(
-                        height: 50,
-                        width: MediaQuery.of(context).size.width - 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: mediumgreen),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 15.0),
-                              child: Text(
-                                "Start Project",
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 25,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
-                            Spacer(),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 15.0),
-                              child: IconButton(
-                                  color: white,
-                                  icon: Icon(
-                                    Icons.add,
-                                    size: 35,
-                                  ),
-                                  onPressed: () {}),
-                            ),
-                          ],
-                        )),
+        backgroundColor: Colors.white,
+        title: Text(
+          "Eco Projects",
+          style: GoogleFonts.montserrat(
+            fontSize: 25,
+            color: Colors.black,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          Column(
+            children: [
+              Hero(
+                tag: "schools",
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: CircleAvatar(
+                      radius: 100,
+                      backgroundColor: Colors.white,
+                      backgroundImage: AssetImage("assets/students2.jpg"),
+                    ),
                   ),
                 ),
-              )
-            : EcoTracker(
-                titletext: textEditingController.text,
-              ));
+              ),
+              // SizedBox(height: 5,),
+
+              Padding(
+                padding: const EdgeInsets.only(top: 80.0),
+                child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width - 40,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.green[400]),
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 15.0),
+                      child: Text(
+                        "Joan's Projects",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(new MaintenanceRoute());
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(top: 80.0),
+              child: Container(
+                  height: 80,
+                  width: MediaQuery.of(context).size.width - 40,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: black),
+                  child:  Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 15.0),
+                          child: Text(
+                            "Maintenance",
+                            style: GoogleFonts.montserrat(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),),
+            ),
+          ),
+        ],
+      ),
+      //  !hascreatednursery
+      //     ? GestureDetector(
+      //         onTap: () => _modalBottomSheetMenu(),
+      //         child: Align(
+      //           alignment: Alignment.topCenter,
+      //           child: Padding(
+      //             padding: const EdgeInsets.only(top: 80.0),
+      //             child: Container(
+      //                 height: 50,
+      //                 width: MediaQuery.of(context).size.width - 40,
+      //                 decoration: BoxDecoration(
+      //                     borderRadius: BorderRadius.circular(8),
+      //                     color: mediumgreen),
+      //                 child: Row(
+      //                   children: [
+      //                     Padding(
+      //                       padding: const EdgeInsets.only(left: 15.0),
+      //                       child: Text(
+      //                         "Start Project",
+      //                         style: GoogleFonts.montserrat(
+      //                           fontSize: 25,
+      //                           color: Colors.white,
+      //                           fontWeight: FontWeight.w500,
+      //                         ),
+      //                       ),
+      //                     ),
+      //                     Spacer(),
+      //                     Padding(
+      //                       padding: const EdgeInsets.only(right: 15.0),
+      //                       child: IconButton(
+      //                           color: white,
+      //                           icon: Icon(
+      //                             Icons.add,
+      //                             size: 35,
+      //                           ),
+      //                           onPressed: () {}),
+      //                     ),
+      //                   ],
+      //                 )),
+      //           ),
+      //         ),
+      //       )
+      //     : EcoTracker(
+      //         titletext: textEditingController.text,
+      //       )
+    );
   }
+}
+
+class MaintenanceRoute extends CupertinoPageRoute {
+  MaintenanceRoute()
+      : super(builder: (BuildContext context) => new EcoProjects());
+
+  // OPTIONAL IF YOU WISH TO HAVE SOME EXTRA ANIMATION WHILE ROUTING
+  @override
+  Widget buildPage(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation) {
+    return new FadeTransition(opacity: animation, child: new Maintenance());
+  }
+  //         );
+
 }
