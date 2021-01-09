@@ -27,87 +27,105 @@ class _DropDownState extends State<DropDown> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    Column(
+    return Column(
       children: [
-        Row(
-              children:[ 
-                 Text(
-                                           "Type",
-                                            style: GoogleFonts.montserrat(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                          Spacer(),
-                DropdownButton<String>(
+        Row(children: [
+          Text(
+            "Type",
+            style: GoogleFonts.montserrat(
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+              color: Colors.black,
+            ),
+          ),
+          Spacer(),
+          DropdownButton<String>(
             value: dropdownValue,
             icon: Icon(Icons.arrow_downward),
             iconSize: 24,
             elevation: 16,
-             style: GoogleFonts.montserrat(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                                color: Colors.black,
-                                              ),
-                                              underline: Container(
-                                                height: 2,
-                                                color: Colors.black,
-                                              ),
+            style: GoogleFonts.montserrat(
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
+              color: Colors.black,
+            ),
+            underline: Container(
+              height: 2,
+              color: Colors.black,
+            ),
             onChanged: (String newValue) {
               setState(() {
                 dropdownValue = newValue;
               });
             },
             items: <String>[
-                  'Nursey',
-                                                'Eco_Clean Up',
-                                                'Tree Planting',
-                                                'General'
-            ]
-                .map<DropdownMenuItem<String>>((String value) {
+              'Nursey',
+              'Eco_Clean Up',
+              'Tree Planting',
+              'General'
+            ].map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
                 child: Text(value),
               );
             }).toList(),
           ),
-         
-          
-          ]
-        ),
-         Padding(
-        padding: const EdgeInsets.only(top:160.0),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-                  child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              gradient: LinearGradient(colors: [
-                Colors.greenAccent[400],
-                Colors.green[800]
-              ]),
-              
-            ),
-            width:  MediaQuery.of(context).size.width-40,
-            height: 50,
-            child: Center(
-              child: Text("Proceed",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.montserrat(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w500,
-                                            color: Colors.white,
-                                          ),
+        ]),
+        Hero(
+            tag: "schools",
+            child: Padding(
+              padding: const EdgeInsets.only(top: 160.0),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    gradient: LinearGradient(
+                        colors: [Colors.greenAccent[400], Colors.green[800]]),
+                  ),
+                  width: MediaQuery.of(context).size.width - 40,
+                  height: 50,
+                  child: Center(
+                    child: Text(
+                      "Proceed",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.montserrat(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )),
+        Padding(
+          padding: const EdgeInsets.only(top: 160.0),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                gradient: LinearGradient(
+                    colors: [Colors.greenAccent[400], Colors.green[800]]),
+              ),
+              width: MediaQuery.of(context).size.width - 40,
+              height: 50,
+              child: Center(
+                child: Text(
+                  "Proceed",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.montserrat(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
           ),
-        ),
-      )
+        )
       ],
     );
   }
 }
-
-

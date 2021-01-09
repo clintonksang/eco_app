@@ -232,6 +232,8 @@ class _EcoProjectsState extends State<EcoProjects> {
                   ),
                 ),
               )
-            : EcoTracker());
+            : EcoTracker(
+                titletext: textEditingController.text,
+              ));
   }
 }
