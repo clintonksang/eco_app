@@ -36,6 +36,14 @@ class _MaintenanceState extends State<Maintenance> {
     return Scaffold(
       backgroundColor: Colors.green[100],
       appBar: AppBar(
+        title: Text("Tasks",
+            style: GoogleFonts.montserrat(
+              textStyle: TextStyle(
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey[800]),
+            )),
+        centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.green[100],
         leading: IconButton(
@@ -112,10 +120,6 @@ class _MaintenanceState extends State<Maintenance> {
                     width: loginWidth,
                     height: 60.0,
                     decoration: BoxDecoration(
-                      // gradient: LinearGradient(
-                      //     List: [Color(0xFF7349FE), Color(0xFF643FDB)],
-                      //     begin: Alignment(0.0, -1.0),
-                      //     end: Alignment(0.0, 1.0)),
                       color: Colors.green[600],
                       borderRadius: BorderRadius.circular(20.0),
                     ),
