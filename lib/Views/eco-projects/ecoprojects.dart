@@ -27,7 +27,7 @@ class _EcoProjectsState extends State<EcoProjects> {
   final TextEditingController textEditingController = TextEditingController();
   String textfromForm = "null";
   String school = "null";
-  void _modalBottomSheetMenu() {
+  _modalBottomSheetMenu() {
     showModalBottomSheet(
         context: context,
         builder: (builder) {
@@ -243,24 +243,24 @@ class _EcoProjectsState extends State<EcoProjects> {
             child: Padding(
               padding: const EdgeInsets.only(top: 80.0),
               child: Container(
-                  height: 80,
-                  width: MediaQuery.of(context).size.width - 40,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: black),
-                  child:  Center(
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 15.0),
-                          child: Text(
-                            "Maintenance",
-                            style: GoogleFonts.montserrat(
-                              fontSize: 25,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),),
+                height: 80,
+                width: MediaQuery.of(context).size.width - 40,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8), color: black),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
+                    child: Text(
+                      "Maintenance",
+                      style: GoogleFonts.montserrat(
+                        fontSize: 25,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ],

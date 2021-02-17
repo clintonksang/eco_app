@@ -105,7 +105,7 @@ class _SchoolsState extends State<Schools> {
                               final snackBar = SnackBar(
                                 backgroundColor: Colors.black,
                                 content: Text(
-                                  'Selected School value is $schoolValue',
+                                  'Selected School is $schoolValue',
                                   style: GoogleFonts.montserrat(
                                       fontWeight: FontWeight.bold,
                                       // fontSize: 17,

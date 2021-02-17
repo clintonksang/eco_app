@@ -1,4 +1,7 @@
+import 'package:eco_app/Views/eco-projects/eco.dart';
 import 'package:eco_app/Views/eco-projects/ecoprojects.dart';
+import 'package:eco_app/Views/videoRoute.dart';
+import 'package:eco_app/widgets/EcoSchoolsRoute.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -175,22 +178,7 @@ class _LandingPageState extends State<LandingPage> {
 
               GestureDetector(
                 onTap: () {
-                  // Navigator.push(
-                  //     context,
-                  //         MaterialPageRoute(
-
-                  //           builder:
-
-                  //          (context) {
-                  //       //navigate
-                  //       return LoginScreen(
-                  //           // school: textEditingController.text,
-                  //           );
-                  //     }
-                  //     )
-
-                  //         );
-                  Navigator.of(context).push(new EcoProjectsRoute());
+                  Navigator.of(context).push(ElearningRoute());
                 },
                 child: Center(
                   child: Container(
@@ -213,45 +201,56 @@ class _LandingPageState extends State<LandingPage> {
               ),
               SizedBox(height: 15),
 
-              Center(
-                child: Container(
-                    width: MediaQuery.of(context).size.width - 20,
-                    height: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/ecoschools.jpg"))),
-                    child: Center(
-                        child: Text("Eco-Schools",
-                            style: GoogleFonts.montserrat(
-                              textStyle: TextStyle(
-                                  fontSize: 25.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            )))),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(EcoSchoolsRoute());
+                },
+                child: Center(
+                  child: Container(
+                      width: MediaQuery.of(context).size.width - 20,
+                      height: 200,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/ecoschools.jpg"))),
+                      child: Center(
+                          child: Text("Eco-Schools",
+                              style: GoogleFonts.montserrat(
+                                textStyle: TextStyle(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              )))),
+                ),
               ),
+
               SizedBox(height: 15),
 
-              Center(
-                child: Container(
-                    width: MediaQuery.of(context).size.width - 20,
-                    height: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            // colorFilter: ColorFilter.mode(
-                            //     Colors.black12, BlendMode.dstATop),
-                            image: AssetImage("assets/meet.jpg"))),
-                    child: Center(
-                        child: Text("Eco-Meet",
-                            style: GoogleFonts.montserrat(
-                              textStyle: TextStyle(
-                                  fontSize: 25.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            )))),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(VideoRoute());
+                },
+                child: Center(
+                  child: Container(
+                      width: MediaQuery.of(context).size.width - 20,
+                      height: 200,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              // colorFilter: ColorFilter.mode(
+                              //     Colors.black12, BlendMode.dstATop),
+                              image: AssetImage("assets/meet.jpg"))),
+                      child: Center(
+                          child: Text("Eco-Meet",
+                              style: GoogleFonts.montserrat(
+                                textStyle: TextStyle(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              )))),
+                ),
               ),
               //  SizedBox(height: 20.0),
               // Center(child: Profession()),
@@ -272,17 +271,14 @@ class _LandingPageState extends State<LandingPage> {
 }
 
 //
-class EcoProjectsRoute extends CupertinoPageRoute {
-  EcoProjectsRoute()
-      : super(builder: (BuildContext context) => new EcoProjects());
+class ElearningRoute extends CupertinoPageRoute {
+  ElearningRoute() : super(builder: (BuildContext context) => new Elearning());
 
   // OPTIONAL IF YOU WISH TO HAVE SOME EXTRA ANIMATION WHILE ROUTING
   @override
   Widget buildPage(BuildContext context, Animation<double> animation,
       Animation<double> secondaryAnimation) {
-    return new FadeTransition(opacity: animation, child: new EcoProjects());
+    return new FadeTransition(opacity: animation, child: new Elearning());
   }
-  //         );
-
 }
 //

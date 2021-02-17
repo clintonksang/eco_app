@@ -1,6 +1,7 @@
 import 'package:eco_app/Views/school.dart';
 import 'package:eco_app/services/googlesignin/authmethods.dart';
 import 'package:eco_app/Views/LandingPage.dart';
+import 'package:eco_app/widgets/connectiontest.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,6 +11,10 @@ void main() {
   // SystemChrome.setEnabledSystemUIOverlays([]);
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(statusBarColor: Colors.green[600]));
+  ConnectionStatusSingleton connectionStatus =
+      ConnectionStatusSingleton.getInstance();
+  connectionStatus.initialize();
+
   runApp(MyApp());
 }
 
